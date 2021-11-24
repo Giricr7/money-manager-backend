@@ -23,7 +23,7 @@ loadApp = async() => {
         app.use('/income', incomeRoutes);
         app.use('/expense', expenseRoutes);
         app.use('/', dashboardRoutes);
-        app.listen(port, (req, res) => {
+        app.listen(process.env.PORT || port, (req, res) => {
             console.log('server successfully connected');
         })
     } catch (err) {
