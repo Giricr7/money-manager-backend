@@ -1,6 +1,6 @@
 const express = require('express')
 const app = express()
-const port = 3001;
+const port = process.env.PORT || 3001;
 const cors = require('cors')
 const mongo = require('./mongo')
 const incomeRoutes = require('./Routes/routes.income')
@@ -14,7 +14,7 @@ loadApp = async() => {
     
         await mongo.connect();
         app.use(cors({
-            origin: 'http://localhost:3000',
+            origin: 'https://hackathon-money-manager.netlify.app',
             credentials:true,     
             optionSuccessStatus:200
         }))
