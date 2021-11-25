@@ -13,7 +13,7 @@ router.get('/', async (req, res) => {
 })
 
 router.patch('/:id',async (req, res) => {
-    const rspns = await mongo.db.collection('expense').update(
+    const rspns = await mongo.db.collection('expense').updateOne(
         { _id: ObjectId(req.params.id) },
         {$set:req.body}
     );
